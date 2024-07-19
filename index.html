@@ -18,19 +18,19 @@
     font-family: inherit;
   }
   #age-verification-popup .content {
-    background: #fff;
+    background: #fdfcfd;
     padding: 50px;
     border-radius: 10px;
     text-align: center;
   }
   #age-verification-popup .content h3 {
     margin-bottom: 20px;
-    color: #232323;
+    color: #231f21;
   }
   #age-verification-popup .content p {
     margin-bottom: 30px;
     font-size: 16px;
-    color: #232323;
+    color: #231f21;
   }
   #age-verification-popup .content button {
     padding: 15px 30px;
@@ -39,8 +39,8 @@
     margin: 0 10px;
     border: none;
     border-radius: 5px;
-    background-color: #232323;
-    color: #fff;
+    background-color: #231f21;
+    color: #f2db9f;
     text-transform: uppercase;
     font-weight: bold;
   }
@@ -49,7 +49,7 @@
     text-align: center;
     padding-top: 30px;
     display: block;
-    color: #555555;
+    color: #231f21;
   }
 
 </style>
@@ -58,11 +58,10 @@
 
 <div id="age-verification-popup" style="display:none;">
   <div class="content">
-    <h3>Are you over 18?</h3>
-    <p>Please confirm you are over the UK legal drinking age of 18 to continue.</p>
+    <h3>Are you at least 21 years of age?</h3>
+    <p>Please confirm you are of legal drinking age.</p>
     <button class="yes" onclick="verifyAge(true)">Yes</button>
     <button class="no" onclick="verifyAge(false)">No</button>
-    <small>Age Verification Widget by ⚡ <a href="https://littlethunder.co">Little Thunder</a></small>
   </div>
   
 </div>
@@ -75,12 +74,12 @@
     }
   });
 
-  function verifyAge(isOver18) {
-    if (isOver18) {
+  function verifyAge(isOver21) {
+    if (isOver21) {
       setCookie('ageVerified', 'true', 1);
       document.getElementById('age-verification-popup').style.display = 'none';
     } else {
-      window.location.href = 'https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/buying-alcohol#under18s';
+      window.location.href = 'https://en.wikipedia.org/wiki/Legal_drinking_age_in_the_United_States';
     }
   }
 
